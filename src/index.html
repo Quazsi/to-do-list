@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <p>This is a default header</p>
+    </div>
+
+    <div id="sidebar">
+        <div id="logo">
+
+        </div>
+
+        <div id="tasks">
+            <div id="add-tasks">
+                <p>Add Task</p>
+            </div>
+            <div id="all-tasks">
+                <p>All tasks</p>
+            </div>
+            <div id="today">
+                <p>Today</p>
+            </div>
+            <div id="weekly">
+                <p>This Week</p>
+            </div>
+            <div id="priority">
+
+            </div>
+        </div>
+        
+        <div id="projects">
+            <div id="add-project">
+                <p>Add project</p>
+            </div>
+            <div id="project-list">
+                <p>Project project-list</p>
+            </div>
+        </div>
+
+    </div>
+     <!-- Button to open the modal -->
+     <button id="open-modal-btn">Create New Task</button>
+
+     <!-- The Modal (already present in your HTML) -->
+     <div id="taskModal" class="modal">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h2>Create New Task</h2>
+                 <span class="close">&times;</span>
+             </div>
+             <div class="modal-body">
+                 <form id="task-form">
+                     <label for="task-title">Title:</label><br>
+                     <input type="text" id="task-title" name="title" required><br><br>
+ 
+                     <label for="task-description">Description:</label><br>
+                     <textarea id="task-description" name="description"></textarea><br><br>
+ 
+                     <label for="task-due-date">Due Date:</label><br>
+                     <input type="date" id="task-due-date" name="dueDate"><br><br>
+ 
+                     <label for="task-priority">Priority:</label><br>
+                     <select id="task-priority" name="priority">
+                         <option value="low">Low</option>
+                         <option value="medium">Medium</option>
+                         <option value="high">High</option>
+                     </select><br><br>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
+                 <button type="submit" class="btn-primary" form="task-form">Create Task</button>
+             </div>
+         </div>
+     </div>
+
+</body>
+</html>
