@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
   },
+  devtool: "eval-source-map", // Added source maps for better debugging
   plugins: [
     new HtmlWebpackPlugin({
       title: 'My Webpack Project',

@@ -3,48 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <div id="header">
-        <p>This is a default header</p>
+
+
+    <div id="header"></div>
+
+    <div id="taskBar">
+
     </div>
 
-    <div id="sidebar">
-        <div id="logo">
 
-        </div>
+    <div id="sidebar">
+
+
+
 
         <div id="tasks">
-            <div id="add-tasks">
-                <p>Add Task</p>
-            </div>
+
             <div id="all-tasks">
-                <p>All tasks</p>
+                <a href="#" id="all-tasks-link">All tasks</a>
             </div>
             <div id="today">
-                <p>Today</p>
+                <a href="#" id="today-link">Today</a>
             </div>
             <div id="weekly">
-                <p>This Week</p>
+                <a href="#" id="weekly-link">This Week</a>
             </div>
             <div id="priority">
-
+                <a href="#" id="priority-link">Priority</a>
             </div>
         </div>
         
         <div id="projects">
             <div id="add-project">
-                <p>Add project</p>
+                <span>Create new project</span>
+                <svg id="open-project-modal-btn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                    stroke-width="1.5" stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+                </svg>
             </div>
-            <div id="project-list">
-                <p>Project project-list</p>
-            </div>
+            <div id="project-list"></div>
         </div>
+        
+        <button id="open-modal-btn">+</button>
 
     </div>
-     <!-- Button to open the modal -->
-     <button id="open-modal-btn">Create New Task</button>
+
+
+    
 
      <!-- The Modal (already present in your HTML) -->
      <div id="taskModal" class="modal">
@@ -70,6 +79,13 @@
                          <option value="medium">Medium</option>
                          <option value="high">High</option>
                      </select><br><br>
+                     <label for="task-project">Project</label>
+                     <select id="task-project" name="task-project">
+                         <option value="new">Create New Project</option>pontu
+                         <!-- Dynamically add existing projects here -->
+                     </select>
+                     
+                     <input type="text" id="new-project-name" placeholder="New Project Name" style="display:none;" /> 
                  </form>
              </div>
              <div class="modal-footer">
@@ -78,6 +94,28 @@
              </div>
          </div>
      </div>
+
+     <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Project</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="project-form">
+                    <label for="project-name">Project Name:</label><br>
+                    <input type="text" id="project-name" name="project-name" required><br><br>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancel-project-btn">Cancel</button>
+                <button type="submit" class="btn-primary" form="project-form">Create Project</button>
+            </div>
+        </div>
+    </div>
+    
+
+
 
 </body>
 </html>
